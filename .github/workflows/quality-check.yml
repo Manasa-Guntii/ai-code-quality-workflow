@@ -1,4 +1,4 @@
-name: Automated quality checks
+name: Automated Code Quality Check
 
 on:
   pull_request:
@@ -20,7 +20,7 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run Quality Check Script
+      - name: Run AI Code Quality Script
         run: npx tsx quality-check.ts
         env:
           GITHUB_OWNER: ${{ github.repository_owner }}

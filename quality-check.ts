@@ -2,21 +2,16 @@ import "dotenv/config";
 
 console.log("🚀 Code Quality Workflow Started");
 
-const repo = `${process.env.GITHUB_OWNER}/${process.env.GITHUB_REPO}`;
+const repoOwner = process.env.GITHUB_OWNER || "demo-user";
+const repoName = process.env.GITHUB_REPO || "demo-repo";
 
-console.log("\n📦 Repository:", repo);
-
-// fake issues (we will replace with real SonarQube later)
-const issues = [
-  "❌ Unused variable in app.js",
-  "❌ Missing error handling in API call",
-  "❌ Hardcoded password found"
-];
+console.log(`📦 Repository: ${repoOwner}/${repoName}`);
 
 console.log("\n🔍 Found Issues:");
-issues.forEach(i => console.log(i));
+console.log("❌ Unused variable in app.js");
+console.log("❌ Missing error handling in API call");
+console.log("❌ Hardcoded password found");
 
-// simple rule engine
 console.log("\n🧠 AI Recommendation:");
 console.log("- Fix security issues first");
 console.log("- Then fix bugs");
